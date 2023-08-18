@@ -78,23 +78,6 @@ class novaGallery {
       return filemtime($file); // use filetime, if no image
     }
 
-    
-
-  protected function order($list, $order){
-    switch ($order) {
-      case 'oldest':
-        asort($list);
-        break;
-      case 'newest':
-        arsort($list);
-        break;
-      default:
-        // order by name
-        $list = $this->orderByName($list);
-        break;
-    }
-    return $list;
-  }
 
   // sort array by natcasesort with german umlaute
   // solution based on http://www.marcokrings.de/arrays-sortieren-mit-umlauten/
