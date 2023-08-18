@@ -1,25 +1,13 @@
 <?php
+/**
+ * novaGallery
+ * @author novafacile OÜ
+ * @copyright Copyright (c) 2021 by novafacile OÜ
+ * @license AGPL-3.0
+ * @version 1.1.1
+ * @link https://novagallery.org
+ **/
 
-    // Include the UberGallery class
-    include('resources/UberGallery.php');
+require_once('nova-base/init.php');
 
-    // Initialize the UberGallery object
-    $gallery = new UberGallery();
-
-    // Initialize the gallery array
-    $galleryArray = $gallery->readImageDirectory('gallery-images');
-
-    // Define theme path
-    if (!defined('THEMEPATH')) {
-        define('THEMEPATH', $gallery->getThemePath());
-    }
-
-    // Set path to theme index
-    $themeIndex = $gallery->getThemePath(true) . '/index.php';
-
-    // Initialize the theme
-    if (file_exists($themeIndex)) {
-        include($themeIndex);
-    } else {
-        die('ERROR: Failed to initialize theme');
-    }
+?>
