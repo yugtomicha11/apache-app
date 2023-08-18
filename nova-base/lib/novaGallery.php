@@ -81,13 +81,7 @@ class novaGallery {
 
   // sort array by natcasesort with german umlaute
   // solution based on http://www.marcokrings.de/arrays-sortieren-mit-umlauten/
-  protected function orderByName($list){
-    // swap key (name) value (timestamp) for order operations
-    $nameList = array();
-    foreach ($list as $album => $value) {
-      array_push($nameList, $album);
-    }
-
+  
     // sort based on http://www.marcokrings.de/arrays-sortieren-mit-umlauten/
     $aOriginal = $nameList;
     if (count($aOriginal) == 0) { return $aOriginal; }
