@@ -1,10 +1,10 @@
 <?php defined("NOVA") or die(); ?>
 {
-  "siteName": "novaGallery",
-  "siteTitle": "The Simple Gallery",
+  "siteName": "catsandhats",
+  "siteTitle": "Cats & Hats",
   "metaTitle": "novaGallery",
   "metaDescription": "novaGallery - beautiful php photo gallery.",
-  "footerText": "&copy; 2021 by novafacile OÜ",
+  "footerText": "Nothing to see here, just some cats",
   "theme": "novagallery",
   "url": "https://cats-and-hats-ufl2f.kinsta.app/",
   "language": "en",
