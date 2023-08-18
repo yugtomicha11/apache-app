@@ -78,59 +78,7 @@ class novaGallery {
       return filemtime($file); // use filetime, if no image
     }
 
-    // Get the photo's EXIF tags
-    try {
-      @$exif_data = exif_read_data($file);
-      if($exif_data === false) {
-        return filemtime($file); // use filemtime, if no exif data
-      }
-    } catch (Exception $e) {
-      return filemtime($file); // use filemtime, if exif data error
-    }
     
-
-    // default value, which represents no date
-    $date = false;
-    // Array of EXIF date tags to check
-    $date_tags = [
-      'DateTimeOriginal',
-      'DateTimeDigitized',
-      'DateTime',
-      //'FileDateTime'
-    ];
-
-    // Check for the EXIF date tags, in the order specified above. First value wins.
-    foreach($date_tags as $date_tag){
-      if(isset($exif_data[$date_tag])){
-        $date = $exif_data[$date_tag];
-        $date = $this->timestampFromExif($date);
-        break;
-      }
-    }
-
-    // If no date tags were found use filemtime
-    if(!$date) { return filemtime($file);}
-
-    //If the date that was extracted is a string, convert it to an integer
-    if( is_string($date) ) $date = strtotime($date);
-
-    return $date;
-  }
-
-  protected function timestampFromExif($string){
-    if (!(preg_match('/\d\d\d\d:\d\d:\d\d \d\d:\d\d:\d\d/', $string))) {
-      return $string; // wrong date
-    }
-
-    $iTimestamp = mktime(
-            substr( $string, 11, 2 ), 
-            substr( $string, 14, 2 ), 
-            substr( $string, 17, 2 ), 
-            substr( $string, 5, 2 ), 
-            substr( $string, 8, 2 ), 
-            substr( $string, 0, 4 ));
-    return $iTimestamp;
-  }
 
   protected function order($list, $order){
     switch ($order) {
