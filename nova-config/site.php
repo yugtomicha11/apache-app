@@ -6,7 +6,7 @@
   "metaDescription": "novaGallery - beautiful php photo gallery.",
   "footerText": "&copy; 2021 by novafacile OÜ",
   "theme": "novagallery",
-  "url": "https://demo.novagallery.org",
+  "url": "https://cats-and-hats-ufl2f.kinsta.app/",
   "language": "en",
   "allowedImageSizes": [
       "400x400",
